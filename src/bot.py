@@ -1,11 +1,12 @@
 from discord.ext import commands
-import discord, logging
+import discord
 
 import json
 
 from cogs.moderation import Moderation
 from cogs.misc import Misc
 from cogs.trivia import Trivia
+from cogs.market import Market
 
 class Bot(commands.Bot):
     def __init__(self, command_prefix, db):
@@ -17,6 +18,7 @@ class Bot(commands.Bot):
         self.add_cog(Moderation(self.db))
         self.add_cog(Misc(self))
         self.add_cog(Trivia(self, self.questions))
+        self.add_cog(Market(self.db))
         
         
     async def on_ready(self):

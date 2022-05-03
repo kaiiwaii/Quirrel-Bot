@@ -10,3 +10,4 @@ class Database:
         schema = open("schema/schema.sql", "r").read()
         async with self.pool.acquire() as con:
             await con.execute(schema)
+            #await con.execute("INSERT INTO market (name, price, description) VALUES ('Brújula caprichosa', '50', 'Te guiará en el camino')")
