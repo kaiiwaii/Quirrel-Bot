@@ -6,12 +6,40 @@
             "option3": "Cumbre de cristal",
             "correct_option": "B"
         },
-        "¿Cámo se llama el insecto que te puedes encontrar cuando rompes el cartel de debajo de Bocasucia?":
+        "¿Cómo se llama el insecto que te puedes encontrar cuando rompes el cartel de debajo de Bocasucia?":
         {
             "option1": "Elderbug",
             "option2": "Bretta",
             "option3": "Menderbug",
             "correct_option": "C"
+        },
+        "¿Dónde se encuentra el depósito de Geo más grande del juego?":
+        {
+            "option1": "Ciudad de lágrimas",
+            "option2": "Jardines de la reina",
+            "option3": "Límite rel reino",
+            "correct_option": "C"
+        },
+        "¿Cuántas máscaras necesitas para entrar a la sala de saviavida del abismo?":
+        {
+            "option1": "13 o más",
+            "option2": "15 o más",
+            "option3": "11 o más",
+            "correct_option": "B"
+        },
+         "¿Cuántos fantasmas hay en el Claro de la Esperanza?":
+        {
+            "option1": "22",
+            "option2": "24",
+            "option3": "18",
+            "correct_option": "C"
+        },
+         "¿Cuántas larvas hay en total en todo el juego?":
+        {
+            "option1": "42",
+            "option2": "46",
+            "option3": "50",
+            "correct_option": "B"
         }
     },
     "medium": {
@@ -19,6 +47,34 @@
             "option1": "3 veces",
             "option2": "5 veces",
             "option3": "4 veces",
+            "correct_option": "C"
+        },
+         "¿Qué se le puede comprar a Tuk?":
+        {
+            "option1": "Huevos podridos",
+            "option2": "Amuletos",
+            "option3": "Geo",
+            "correct_option": "A"
+        },
+        "¿Cómo se llama el aguijón que porta el Zote?":
+        {
+            "option1": "Matavidas",
+            "option2": "Aguijón onírico",
+            "option3": "Terminavidas",
+            "correct_option": "C"
+        },
+        "¿En cuántas zonas se encuentra el Caballero con Hornet?":
+        {
+            "option1": "5",
+            "option2": "2",
+            "option3": "6",
+            "correct_option": "A"
+        },
+        "¿Cuál es el amuleto que más espacios del inventario ocupa?":
+        {
+            "option1": "Corazón del Vacío",
+            "option2": "Sangrecolmena",
+            "question3": "Alma del Monarca",
             "correct_option": "C"
         }
     },
@@ -41,6 +97,19 @@
             "option2": "Hornet",
             "option3": "Falso Caballero",
             "correct_option": "A"
+        },
+         "¿A qué zona pertenece El Abismo?": {
+            "option1": "Canales Reales",
+            "option2": "Cuenca antigua", 
+            "option3": "Acantilados aulladores",
+            "correct_option":   "B"
+        },
+        "¿En qué zona se consigue el objeto CAPA DE ALA DE POLILLA?":
+        {
+            "option1": "Cumbre de Cristal",
+            "option2": "Jardines de la Reina",
+            "option3": "Sendero Verde",
+            "correct_option":"C"
         }
     }
 }
