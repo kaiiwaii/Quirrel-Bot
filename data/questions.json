@@ -1,0 +1,46 @@
+{
+    "hard": {
+        "¿Dónde se ubica el depósito más grande de geo?": {
+            "option1": "Jardines de la reina",
+            "option2": "Límite del reino",
+            "option3": "Cumbre de cristal",
+            "correct_option": "B"
+        },
+        "¿Cámo se llama el insecto que te puedes encontrar cuando rompes el cartel de debajo de Bocasucia?":
+        {
+            "option1": "Elderbug",
+            "option2": "Bretta",
+            "option3": "Menderbug",
+            "correct_option": "C"
+        }
+    },
+    "medium": {
+        "¿Cuantas veces se puede mejorar el aguijón?": {
+            "option1": "3 veces",
+            "option2": "5 veces",
+            "option3": "4 veces",
+            "correct_option": "C"
+        }
+    },
+    "easy": {
+        "¿Dónde se encuentra Hornet por primera vez?": {
+            "option1": "Sendero Verde",
+            "option2": "Cruces Olvidados",
+            "option3": "Ciudad de Lágrimas",
+            "correct_option": "A"
+        },
+        "¿Cómo se llama el primer jefe (que te abre el camino para el primer hechizo)?":
+        {
+            "option1": "Madre Gruz",
+            "option2": "Falso Caballero",
+            "option3": "Mawlek Incubador",
+            "correct_option": "B"
+        },
+        "¿Con cuál jefe te enfrentas en Ciudad de Lágrimas (City of tears)?": {
+            "option1": "Maestro de Almas",
+            "option2": "Hornet",
+            "option3": "Falso Caballero",
+            "correct_option": "A"
+        }
+    }
+}
