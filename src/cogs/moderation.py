@@ -1,4 +1,3 @@
-from curses.panel import bottom_panel
 from discord.ext import commands
 import discord
 

@@ -31,11 +31,11 @@ class Trivia(commands.Cog):
 
 
 class TriviaView(View):
-    def __init__(self, question):
+    def __init__(self, question, user_id):
         self.options = [
-        TriviaButton(question["option1"], "A", question["correct_option"]), \
-        TriviaButton(question["option2"], "B", question["correct_option"]), \
-        TriviaButton(question["option3"], "C", question["correct_option"])
+        TriviaButton(question["option1"], "A", question["correct_option"], user_id), \
+        TriviaButton(question["option2"], "B", question["correct_option"], user_id), \
+        TriviaButton(question["option3"], "C", question["correct_option"], user_id)
         ] 
 
         super().__init__(timeout=10)
@@ -54,15 +54,20 @@ class TriviaView(View):
 
 
 class TriviaButton(Button):
-    def __init__(self, label, expected, correct):
+    def __init__(self, label, expected, correct, user):
         self.expected = expected
         self.correct = correct
+        self.user = user
         self.finished = None
         super().__init__(label=label, style=discord.ButtonStyle.green)
     
     async def callback(self, interaction):
+        if not self.user == interaction.user.id:
+            return
+        
         embed = discord.Embed(title="Respuesta ", color=0x7C9EB8)
         self.finished = True
+
         if self.expected == self.correct:
             embed.title += "correcta!"
             await interaction.response.edit_message(embed=embed, view=None)
