@@ -5,6 +5,7 @@ from dotenv import dotenv_values
 
 env = dotenv_values(".env")
 token = env.pop("token")
+env.pop("sh_passwd")
 
 
 async def run():

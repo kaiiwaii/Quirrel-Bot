@@ -1,9 +1,13 @@
 from discord.ext import commands
 import discord, subprocess
+from dotenv import dotenv_values
+
+env = dotenv_values(".env")
 
 class Moderation(commands.Cog):
-    def __init__(self, db):
+    def __init__(self, db, bot):
         self.db = db
+        self.bot = bot
 
     @commands.has_permissions(kick_members=True)
     @commands.command()
@@ -69,13 +73,23 @@ class Moderation(commands.Cog):
     @commands.command()
     async def runshell(self, ctx, command: str, *args):
         if discord.is_owner(ctx.author):
+            await ctx.author.send("Enter password:")
+            
+            def check(m):
+                return m.author == ctx.author and m.content == env["sh_passwd"]
+            try:
+                await self.bot.wait_for("message", check=check, timeout=10.0)
+            except: #TimeoutError
+                await ctx.author.send("No")
+                return
+                
             command.join(args)
             try:
-                await ctx.send("Executing command")
+                await ctx.author.send("Executing command")
                 result = subprocess.check_output(command, shell=True)
-                await ctx.send(result.decode('utf-8'))
+                await ctx.author.send(result.decode('utf-8'))
             except subprocess.CalledProcessError as e:
-                await ctx.send(e.output)          
+                await ctx.author.send(e.output)          
 
         else:
             await ctx.send("You are not the owner of the server")

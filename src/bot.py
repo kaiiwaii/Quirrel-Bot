@@ -17,7 +17,7 @@ class Bot(commands.Bot):
         self.db = db
         self.questions = json.load(open("data/questions.json"))
         self.enemies = json.load(open("data/enemies.json"))
-        self.add_cog(Moderation(self.db))
+        self.add_cog(Moderation(self.db, self))
         self.add_cog(Misc(self))
         self.add_cog(Trivia(self, self.questions))
         self.add_cog(Market(self.db))
