@@ -32,6 +32,7 @@ class Misc(commands.Cog):
         embed.add_field(name='Version', value='1.0.0')
         await ctx.send(embed=embed)
 
+        
     @commands.has_permissions(administrator=True)
     @commands.command()
     async def say(self, ctx, *, message):

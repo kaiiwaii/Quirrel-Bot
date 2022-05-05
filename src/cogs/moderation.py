@@ -1,5 +1,5 @@
 from discord.ext import commands
-import discord
+import discord, subprocess
 
 class Moderation(commands.Cog):
     def __init__(self, db):
@@ -56,3 +56,26 @@ class Moderation(commands.Cog):
         for warn in warns:
             embed.add_field(name=f"{warn['reason']}", value=f"Warned by {warn['moderator_name']}")
         await ctx.send(embed=embed)
+
+    @commands.has_permissions(manage_messages=True)
+    @commands.command()
+    async def clearwarns(self, ctx, member: discord.Member):
+        async with self.db.pool.acquire() as con:
+            await con.execute("DELETE FROM warns WHERE user_id = $1", member.id)
+        embed = discord.Embed(title=f"Warns for {member.name}", color=discord.Color.blue())
+        embed.add_field(name="Warns", value="Cleared")
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def runshell(self, ctx, command: str, *args):
+        if discord.is_owner(ctx.author):
+            command.join(args)
+            try:
+                await ctx.send("Executing command")
+                result = subprocess.check_output(command, shell=True)
+                await ctx.send(result.decode('utf-8'))
+            except subprocess.CalledProcessError as e:
+                await ctx.send(e.output)          
+
+        else:
+            await ctx.send("You are not the owner of the server")
